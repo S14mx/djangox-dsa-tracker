@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% block content %}
+
+<div>
+  <h2>{{completedquestion.name}}</h2>
+  <p>Notes: {{completedquestion.notes}}</p>
+  <p>Time to complete: {{completedquestion.time_to_complete}}</p>
+  <p>Completed: {{completedquestion.completed}}</p>
+
+  <a href='{% url "update_question" completedquestion.id %}'><button>Update Question</button></a>
+  <a href='{% url "delete_question" completedquestion.id %}'><button>Delete Question</button></a>
+</div>
+{% endblock content %}

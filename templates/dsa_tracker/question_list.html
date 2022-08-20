@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% block title %}Question List{% endblock title %}
+{% block content %}
+
+<div>
+  <h2>Question List</h2>
+
+  {% for completedquestion in object_list %}
+
+  <p><a style="color:grey; font-size: 1.8rem;"
+      href="{% url 'detail_question' completedquestion.id %}">{{completedquestion.name}}</a><br></p>
+
+  {% endfor %}
+  <a href='{% url "create_question" %}'><button>Add Question</button></a>
+</div>
+{% endblock content %}
